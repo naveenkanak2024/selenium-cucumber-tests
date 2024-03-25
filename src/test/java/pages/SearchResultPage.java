@@ -20,11 +20,15 @@ public class SearchResultPage extends BasePage{
     }
 
     public void printProductSearchResult(){
+        String messageToLog = "";
         List<WebElement> elements = driver.findElements(searchResultHeadings);
         for (int i = 0; i < elements.size(); i++) {
             productSearchResult.add(elements.get(i).getText());
             System.out.println(i+" -> "+elements.get(i).getText());
+            messageToLog = messageToLog+"\n"+i+" -> "+elements.get(i).getText();
         }
+
+        scenario.log(messageToLog);
     }
 
     public void verifyProductDisplayed(String brandName) {

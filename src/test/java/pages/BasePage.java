@@ -1,5 +1,6 @@
 package pages;
 
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -13,7 +14,7 @@ import java.util.logging.Logger;
 public class BasePage {
 
     public static WebDriver driver;
-
+    public static Scenario scenario;
     public WebElement waitForElement(WebElement element){
         Wait<WebDriver> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(10))

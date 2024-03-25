@@ -25,6 +25,7 @@ public class Hooks extends BasePage{
         String log4jConfPath = "log4j.properties";
         PropertyConfigurator.configure(log4jConfPath);
         logger.info("Test Started --> "+scenario.getName());
+        this.scenario = scenario;
 
     }
 
